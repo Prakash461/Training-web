@@ -1,7 +1,7 @@
 import React from "react";
-import Fanta1 from "../assets/food-hygiene.png";
-import Fanta2 from "../assets/consultancy.png";
-import Fanta3 from "../assets/audit-1.png"; 
+import First from "../assets/food-hygiene.png";
+import Second from "../assets/consultancy.png";
+import Third from "../assets/audit-1.png"; 
 import { FaWhatsapp } from "react-icons/fa";
 import { UpdateFollower } from "react-mouse-follower";
 import { AnimatePresence, easeInOut, motion } from "framer-motion";
@@ -36,7 +36,7 @@ const SlideRight = (delay) => {
 const headphoneData = [
   {
     id: 1,
-    image: Fanta1,
+    image: First,
     title: "Food Hygiene Training",
     subtitle:
      "Essential skills to handle, prepare, and store food safely,Learn the best practices to ensure food safety and hygiene compliance.",
@@ -45,7 +45,7 @@ const headphoneData = [
   },
   {
     id: 2,
-    image: Fanta2,
+    image: Second,
     title: "Consultancy",
     subtitle:
        "Expert guidance to help your business grow and succeed,Professional advice tailored to your unique needs and goals.",
@@ -54,7 +54,7 @@ const headphoneData = [
   },
   {
     id: 3,
-    image: Fanta3,
+    image: Third,
      title: (
       <>
         Pulseberry <br /> E-Audit
