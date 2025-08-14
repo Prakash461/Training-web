@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/pulseberry-logo.png";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdClose } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { UpdateFollower } from "react-mouse-follower";
 
 const NavbarMenu = [
   { id: 1, title: "Home", link: "#Home" },
-  { id: 2, title: "Services", link: "#Services" }, // Medical relevant menu
+  { id: 2, title: "Services", link: "#Services" },
   { id: 3, title: "About Us", link: "#About" },
   { id: 4, title: "Blog", link: "#Blogs" },
   { id: 5, title: "Contact", link: "#Contact" },
 ];
 
 const Navbar = ({ activeColor }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div
-      style={{ backgroundColor: activeColor }}
-      className="text-white py-3 md:py-8"> 
+    <div style={{ backgroundColor: activeColor }} className="text-white py-3 md:py-8">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -26,11 +26,10 @@ const Navbar = ({ activeColor }) => {
       >
         {/* Logo section */}
         <div>
-          {/* Removed invert to keep logo original colors */}
           <img src={Logo} alt="Medical Logo" className="max-w-[150px]" />
         </div>
 
-        {/* Menu section (desktop only) */}
+        {/* Menu section (desktop) */}
         <div className="hidden md:block">
           <ul className="flex items-center gap-6 relative z-40">
             {NavbarMenu.map((item) => (
@@ -53,8 +52,6 @@ const Navbar = ({ activeColor }) => {
                 </UpdateFollower>
               </li>
             ))}
-
-            {/* User account icon */}
             <UpdateFollower
               mouseOptions={{
                 backgroundColor: "white",
@@ -71,11 +68,54 @@ const Navbar = ({ activeColor }) => {
           </ul>
         </div>
 
-        {/* Hamburger Icon (mobile only) */}
+        {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <MdMenu className="text-4xl" />
+          {menuOpen ? (
+            <MdClose
+              className="text-4xl cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            />
+          ) : (
+            <MdMenu
+              className="text-4xl cursor-pointer"
+              onClick={() => setMenuOpen(true)}
+            />
+          )}
         </div>
       </motion.div>
+
+      {/* Mobile menu dropdown */}
+      {menuOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden bg-gray-900"
+        >
+          <ul className="flex flex-col gap-4 p-4">
+            {NavbarMenu.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={item.link}
+                  className="block text-base font-semibold py-2 px-3 uppercase hover:text-[#A1E3D8] transition-colors duration-300"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+            <li>
+              <button
+                className="text-xl hover:text-[#A1E3D8] transition-colors duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FaRegUser />
+              </button>
+            </li>
+          </ul>
+        </motion.div>
+      )}
     </div>
   );
 };
