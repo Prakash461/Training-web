@@ -26,7 +26,7 @@ const Navbar = ({ activeColor }) => {
       >
         {/* Logo section */}
         <div>
-          <img src={Logo} alt="Medical Logo" className="max-w-[150px]" />
+          <img src={Logo} alt="Medical Logo" className="max-w-[200px]" />
         </div>
 
         {/* Menu section (desktop) */}
