@@ -55,7 +55,11 @@ const headphoneData = [
   {
     id: 3,
     image: Fanta3,
-    title: "Pulseberry E-Audit",
+     title: (
+      <>
+        Pulseberry <br /> E-Audit
+      </>
+    ),
     subtitle:
      "Smart digital auditing for accuracy, efficiency, and compliance,Streamlined audit solutions for modern businesses.",
     modal: "Audit",
