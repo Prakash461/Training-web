@@ -39,7 +39,7 @@ const headphoneData = [
     image: Fanta1,
     title: "Food Hygiene Training",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos iusto minima ad ut id eos ad ut id eos",
+     "Essential skills to handle, prepare, and store food safely,Learn the best practices to ensure food safety and hygiene compliance.",
     modal: "Hygiene",
     bgColor: "#007E80",
   },
@@ -48,7 +48,7 @@ const headphoneData = [
     image: Fanta2,
     title: "Consultancy",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos iusto minima ad ut id eos ad ut id eos",
+       "Expert guidance to help your business grow and succeed,Professional advice tailored to your unique needs and goals.",
     modal: "Media",
     bgColor: "#0077B6",
   },
@@ -57,7 +57,7 @@ const headphoneData = [
     image: Fanta3,
     title: "Pulseberry E-Audit",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos iusto minima ad ut id eos ad ut id eos",
+     "Smart digital auditing for accuracy, efficiency, and compliance,Streamlined audit solutions for modern businesses.",
     modal: "Audit",
     bgColor: "#2CA58D",
   },
